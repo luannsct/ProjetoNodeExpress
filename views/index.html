@@ -4,9 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/style.css">
     <title>Olá Mundo</title>
 </head>
 <body>
-    <h2>Olá Mundo! Seja bem vindo <%= nome %>! </h2>
+    
+    <div class="tarefas">
+        <form action="" method="post">
+            <input type="text" name="tarefa" id="tarefaSalvar"/>
+            <input type="submit" value="Inserir" name="acao">
+        </form>
+
+        <% for (let i = 0; i< tarefasList.length;i++ ){ %>
+
+            <p> 
+                <%= tarefasList[i]%>
+                | <a href="/deletar/<%= i %>">X</a>
+            </p>
+
+        <% } %>
+    </div>
+
+
 </body>
 </html>
